@@ -3,3 +3,8 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
+
+const input = document.querySelector(".number");
+const btnCreate = document.querySelector(".create");
+const btnDestroy = document.querySelector(".destroy");
+
