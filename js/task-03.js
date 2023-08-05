@@ -12,3 +12,30 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+/*
+1) Створити контейнер для лішок (ul)
+2) Перебрпти масив
+3) Створити лішку
+4) Створити картинку
+5) Додати лішку у контейнер
+6) Додати контейнер (ul) в документ
+*/
+/* 1-var*
+const ulEl = document.createElement("ul")
+for (const {url, alt} of images) {
+  const liEl = document.createElement("li");
+  const imgEl =document.createElement("img");
+  imgEl.src = `${url}`;
+  imgEl.alt = `${alt}`;
+  liEl.textContent = imgEl;
+ulEl.appendChild(liEl);
+}
+
+
+document.body.appendChild(ulEl);
+*/
+
+const markup = images
+.reduce((acc,{url,alt}) => acc + `<li><img src=${url} alt = ${alt} width =450 px height = auto></img></li>`,"");
+document.body.insertAdjacentHTML("beforeend",`<ul>${markup}</ul>`)
+
