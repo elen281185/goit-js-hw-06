@@ -6,16 +6,19 @@ function onFormSabmit (event){
 event.preventDefault();
 
 const formData = new FormData(event.currentTarget); 
-
-if(form.elements.email.value == "" || form.elements.password.value == "" )
+const email = form.elements.email.value;
+const password = form.elements.password.value;
+if(!email || !password)
 {
 alert("Всі поля повинні бути заповнені");
 
 }
  else{
-    formData.forEach((value, name)=> {
+   /* formData.forEach((value, name)=> {
     console.log (name, ` -> `, value, );});
-    form.reset();
+    form.reset();*/
+    console.log({ email, password });
+    form.reset();    
     }
 }
 

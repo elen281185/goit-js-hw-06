@@ -9,8 +9,8 @@ function onInputFocus(){
 function onInputBlur(e){
 
     let leng=e.target.value.length;
-    console.log(leng);
-    if (leng == 6){
+    const number = Number(passwordInput.getAttribute('data-length'));
+    if (leng === number){
       passwordInput.classList.add("valid");
       passwordInput.classList.remove("invalid");
     }
